@@ -198,7 +198,7 @@ async function initConverse ({
     allow_logout: false,
     show_controlbox_by_default: false,
     view_mode: viewMode,
-    root: shadowRoot,
+    root: shadowRoot ?? window.document,
     allow_message_corrections: 'all',
     allow_message_retraction: 'all',
     visible_toolbar_buttons: {

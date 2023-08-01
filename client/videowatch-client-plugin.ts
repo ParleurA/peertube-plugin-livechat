@@ -213,31 +213,32 @@ function register (registerOptions: RegisterClientOptions): void {
     // container.append(iframe)
     // container.setAttribute('peertube-plugin-livechat-state', 'open')
 
-    const shadowRootDiv = document.createElement('div')
-    shadowRootDiv.classList.add('peertube-plugin-livechat-shadow')
-    container.append(shadowRootDiv)
-    const shadowRoot = shadowRootDiv.attachShadow({ mode: 'open' })
+    // const shadowRootDiv = document.createElement('div')
+    // shadowRootDiv.classList.add('peertube-plugin-livechat-shadow')
+    // container.append(shadowRootDiv)
+    // const shadowRoot = shadowRootDiv.attachShadow({ mode: 'open' })
 
     const chatDiv = document.createElement('converse-root')
     // const chatDiv = document.createElement('div')
     if (additionalStyles) {
       chatDiv.setAttribute('style', additionalStyles)
     }
-    // container.append(chatDiv)
-    shadowRoot.appendChild(chatDiv)
+    container.append(chatDiv)
+    // shadowRoot.appendChild(chatDiv)
+    const shadowRoot = undefined // FIXME
     initConverse({
       viewMode: 'embedded',
       shadowRoot,
-      jid: 'anon.localhost',
+      jid: 'anon.p1.localhost',
       advancedControls: false, // TODO: remove this parameter
-      assetsPath: 'http://localhost:9000/plugins/livechat/6.1.0/static/conversejs/', // FIXME
+      assetsPath: 'http://p1.localhost:9001/plugins/livechat/7.2.1/static/conversejs/', // FIXME
       authenticationUrl: '',
       autoViewerMode: false,
-      boshServiceUrl: 'ws://localhost:9000/plugins/livechat/6.1.0/router/http-bind',
-      websocketServiceUrl: 'ws://localhost:9000/plugins/livechat/6.1.0/ws/xmpp-websocket',
+      boshServiceUrl: 'ws://p1.localhost:9001/plugins/livechat/7.2.1/router/http-bind',
+      websocketServiceUrl: 'ws://p1.localhost:9001/plugins/livechat/7.2.1/ws/xmpp-websocket',
       forceReadonly: false,
       noScroll: false,
-      room: '40d4101d-51e8-4b6c-9a5d-1cfd129def2b@room.localhost',
+      room: '8df24108-6e70-4fc8-b1cc-f2db7fcdd535@room.p1.localhost',
       theme: 'peertube',
       transparent: false
     }).then(() => {}, () => {}) // FIXME: really?
