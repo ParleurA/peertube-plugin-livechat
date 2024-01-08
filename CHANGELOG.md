@@ -6,6 +6,10 @@
 
 * Fullscreen chat: now uses a custom page (in other words: when opening the chat in a new tab, you will have the Peertube menu).
 
+### Minor changes and fixes
+
+* Some code refactoring.
+
 ## 8.0.4
 
 ### Minor changes and fixes
