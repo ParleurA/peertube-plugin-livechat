@@ -74,6 +74,28 @@
         }
       }
     }
+
+    // Moving the button toolbar on the right
+    .bottom-panel {
+      display: flex;
+      flex-flow: row wrap;
+      height: auto; // cancel the fixed height
+
+      .chat-toolbar,
+      .toolbar-buttons {
+        flex-basis: content;
+        order: 99; // place after the message field.
+        width: auto; // cancel the width 100%
+      }
+
+      livechat-slow-mode {
+        flex-grow: 10;
+      }
+
+      converse-muc-message-form {
+        flex-grow: 10;
+      }
+    }
   }
 
   .modal-content {
